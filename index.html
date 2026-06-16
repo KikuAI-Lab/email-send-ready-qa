@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Email Send-Ready QA Demo</title>
+    <meta
+      name="description"
+      content="Browser-local demo for deterministic HTML email pre-send QA, safe fixes, and report export."
+    >
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%232457d6'/%3E%3Cpath d='M3 5h10v6H3z' fill='white'/%3E%3Cpath d='M3 5l5 3 5-3' fill='none' stroke='%232457d6' stroke-width='1'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Browser-local demo</p>
+          <h1>Email Send-Ready QA</h1>
+        </div>
+        <div class="privacy-badge">No upload. No telemetry. No storage.</div>
+      </header>
+
+      <section class="status-strip" aria-live="polite">
+        <div>
+          <span class="metric-label">Status</span>
+          <strong id="statusText">Waiting for HTML</strong>
+        </div>
+        <div>
+          <span class="metric-label">Issues</span>
+          <strong id="issueCount">0</strong>
+        </div>
+        <div>
+          <span class="metric-label">HTML size</span>
+          <strong id="htmlSize">0 B</strong>
+        </div>
+        <div>
+          <span class="metric-label">Safe fixes</span>
+          <strong id="fixCount">0</strong>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <div class="editor-pane">
+          <div class="section-title-row">
+            <div>
+              <p class="eyebrow">Input</p>
+              <h2>Email HTML</h2>
+            </div>
+            <select id="sampleSelect" aria-label="Load a sample email">
+              <option value="">Load sample...</option>
+            </select>
+          </div>
+
+          <label class="field-label" for="preheaderInput">Preheader to insert when missing</label>
+          <input
+            id="preheaderInput"
+            class="text-input"
+            type="text"
+            value="Preview this campaign before sending."
+            maxlength="140"
+          >
+
+          <div class="mode-tabs" aria-label="Demo modes">
+            <button id="modeBrokenBtn" type="button" class="secondary">Broken campaign</button>
+            <button id="modeChatGptBtn" type="button" class="secondary">Verify after ChatGPT</button>
+            <button id="modeCssBtn" type="button" class="secondary">CSS inline check</button>
+          </div>
+
+          <textarea
+            id="htmlInput"
+            spellcheck="false"
+            placeholder="Paste email HTML here, or load a broken sample."
+          ></textarea>
+
+          <div class="action-row">
+            <button id="analyzeBtn" type="button">Analyze</button>
+            <button id="fixBtn" type="button" class="secondary">Apply Safe Fixes</button>
+            <button id="copyBtn" type="button" class="secondary">Copy Fixed HTML</button>
+          </div>
+        </div>
+
+        <div class="report-pane">
+          <div class="section-title-row">
+            <div>
+              <p class="eyebrow">Output</p>
+              <h2>Send-Ready Report</h2>
+            </div>
+            <div class="action-row compact">
+              <button id="downloadHtmlBtn" type="button" class="secondary">Download HTML</button>
+              <button id="downloadReportBtn" type="button" class="secondary">Download Report</button>
+            </div>
+          </div>
+
+          <div class="mode-note">
+            <strong>Verify after ChatGPT:</strong>
+            load the ChatGPT sample to see deterministic issues that can remain after AI editing.
+          </div>
+
+          <div id="summary" class="summary-grid"></div>
+          <div id="fixes" class="fix-list"></div>
+          <div id="issues" class="issue-list"></div>
+          <div id="diff" class="diff-box"></div>
+          <div class="preview-shell">
+            <div class="section-title-row compact-row">
+              <div>
+                <p class="eyebrow">Preview</p>
+                <h2>Fixed HTML</h2>
+              </div>
+            </div>
+            <pre id="fixedPreview" class="fixed-preview">Apply safe fixes to preview export-ready HTML.</pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>

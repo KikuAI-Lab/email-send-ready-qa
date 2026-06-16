@@ -1,0 +1,9 @@
+.DS_Store
+.agent/
+.omx/
+.playwright-mcp/
+node_modules/
+dist/
+*.log
+email-qa-*-smoke.png
+wordpress-zip-doctor-mobile.png
