@@ -62,3 +62,7 @@ These were checked through npm but are not runtime dependencies yet:
 - `htmlparser2@12.0.0`
 - `juice@12.1.1`
 - `@jsx-email/doiuse-email@1.0.4`
+
+## License
+
+AGPL-3.0. See [LICENSE](LICENSE).

@@ -2,6 +2,7 @@
   "name": "email-qa-send-ready-demo",
   "version": "0.1.0",
   "description": "Browser-local pre-send QA demo for AI-edited HTML email campaigns.",
+  "license": "AGPL-3.0-only",
   "private": true,
   "type": "module",
   "scripts": {
