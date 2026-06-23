@@ -6,6 +6,8 @@ Email Campaign Send-Ready QA is a browser-local demo for checking AI-edited HTML
 
 [Docs](#scope) · [Examples](#quickstart) · [Checks](#checks)
 
+![Email Campaign Send-Ready QA browser-local HTML email checker](docs/assets/readme-screenshot.png)
+
 Sample output:
 
 ```text
