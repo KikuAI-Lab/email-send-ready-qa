@@ -1,6 +1,7 @@
 {
   "name": "email-qa-send-ready-demo",
   "version": "0.1.0",
+  "description": "Browser-local pre-send QA demo for AI-edited HTML email campaigns.",
   "private": true,
   "type": "module",
   "scripts": {

@@ -1,8 +1,12 @@
 # Email Campaign Send-Ready QA Demo
 
-Browser-local throwaway demo for testing a post-AI email HTML verifier/fixer.
+Email Campaign Send-Ready QA is a browser-local demo for checking AI-edited HTML emails before send.
 
-## Run
+**[Run locally](#quickstart)**
+
+[Scope](#scope) · [Active workflow](#active-workflow) · [Checks](#checks)
+
+## Quickstart
 
 Open `index.html` directly in a browser, or run a static server:
 
@@ -12,10 +16,19 @@ python3 -m http.server 4173
 
 Then open `http://localhost:4173/`.
 
-## Check
+Expected result: a local QA surface where sample HTML can be analyzed, safely fixed, previewed, and exported without network calls.
+
+## Checks
 
 ```bash
 npm run check
+```
+
+Expected result:
+
+```text
+emailQa.test.mjs: PASS
+noNetwork.test.mjs: PASS
 ```
 
 ## Scope
