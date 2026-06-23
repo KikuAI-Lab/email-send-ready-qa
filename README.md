@@ -4,7 +4,14 @@ Email Campaign Send-Ready QA is a browser-local demo for checking AI-edited HTML
 
 **[Run locally](#quickstart)**
 
-[Scope](#scope) · [Active workflow](#active-workflow) · [Checks](#checks)
+[Docs](#scope) · [Examples](#quickstart) · [Checks](#checks)
+
+Sample output:
+
+```text
+Check: missing preheader
+Action: review suggested fix, preview locally, export fixed HTML
+```
 
 ## Quickstart
 
